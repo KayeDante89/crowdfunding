@@ -6,7 +6,7 @@ import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 // import { allProjects } from "../data";
 
-function HomePage() {
+function AllProjectsPage() {
   // State
   const [projectList, setProjectList] = useState([]); // first variable is the object itself. second is the state to edit the object
 
@@ -20,6 +20,7 @@ function HomePage() {
       });
   }, []);
 
+  // sorting the created date in order
   function compare(a, b) {
     if (a.date_created < b.date_created) {
       return 1;
@@ -29,17 +30,16 @@ function HomePage() {
     }
     return 0;
   }
-
-  const latestProject = projectList.sort(compare).slice(0, 3);
-  // console.log(latestProject);
+  // organizes project list in reverse order so it shows the latest project first
+  const latestProject = projectList.sort(compare);
 
   return (
     <div>
       <h1>Love Ledger</h1>
       <p>Crowdfund your wedding!</p>
-      <h3>Latest Projects</h3>
+      <h3>All Projects</h3>
       <div id="project-list">
-        {latestProject.map((project, key) => {
+        {projectList.map((project, key) => {
           return <ProjectCard key={key} projectData={project} />;
         })}
       </div>
@@ -47,6 +47,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
-
-// sort by created date
+export default AllProjectsPage;

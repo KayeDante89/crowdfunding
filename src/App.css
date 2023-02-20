@@ -4,3 +4,11 @@
   column-gap: 10px;
   row-gap: 10px;
 }
+
+h1 {
+  color: pink;
+}
+
+nav {
+  margin-left: 20px;
+}
