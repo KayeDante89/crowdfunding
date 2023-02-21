@@ -1,0 +1,11 @@
+.project-img {
+  margin: auto;
+  width: 50%;
+  border: 3px solid #c6e2ff;
+  padding: 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}

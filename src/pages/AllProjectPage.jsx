@@ -1,6 +1,7 @@
 // import { useState, useEffect } from "react";
 
 import { useState, useEffect } from "react";
+import "./Pages.css";
 
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
@@ -35,7 +36,6 @@ function AllProjectsPage() {
 
   return (
     <div>
-      <h1>Love Ledger</h1>
       <p>Crowdfund your wedding!</p>
       <h3>All Projects</h3>
       <div id="project-list">
