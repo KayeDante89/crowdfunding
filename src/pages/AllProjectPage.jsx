@@ -1,6 +1,7 @@
 // import { useState, useEffect } from "react";
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Pages.css";
 
 import ProjectCard from "../components/ProjectCard/ProjectCard";
@@ -36,10 +37,12 @@ function AllProjectsPage() {
 
   return (
     <div>
-      <p>Crowdfund your wedding!</p>
-      <h3>All Projects</h3>
+      <section className="text-section">
+        <h2>Need help getting funding? Start a new fund now!</h2>
+      </section>
+      <h1>Discover Current Projects</h1>
       <div id="project-list">
-        {projectList.map((project, key) => {
+        {latestProject.map((project, key) => {
           return <ProjectCard key={key} projectData={project} />;
         })}
       </div>

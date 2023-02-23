@@ -11,14 +11,34 @@ function Nav(props) {
 
   return (
     <nav>
-      <div className="site-title">
-        <h1>Love Ledger</h1>
-      </div>
+      <h1>Love Ledger</h1>
       <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/project">Project</Link>
-        {!loggedIn && <Link to="/login">Login</Link>}
-        {loggedIn && <button onClick={handleClick}>Log Out</button>}
+        <Link className="nav-btn" to="/">
+          Home
+        </Link>
+        <Link className="nav-btn" to="/project">
+          Projects
+        </Link>
+        {loggedIn && (
+          <Link className="nav-btn" to="/create-project">
+            Create Project
+          </Link>
+        )}
+        {!loggedIn && (
+          <Link className="nav-btn" to="/create-account">
+            Create Account
+          </Link>
+        )}
+        {!loggedIn && (
+          <Link className="nav-btn" to="/login">
+            Login
+          </Link>
+        )}
+        {loggedIn && (
+          <button className="logout-btn" onClick={handleClick}>
+            Log Out
+          </button>
+        )}
       </div>
     </nav>
   );

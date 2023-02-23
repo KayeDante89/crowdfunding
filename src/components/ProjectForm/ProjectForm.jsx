@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./ProjectForm.css";
 
 function ProjectForm() {
-  const [project, setProject] = useState({
-    title: "",
-    description: "",
-    goal: "",
-    image: "",
-    is_open: "",
-    date_created: "",
+  const [projectPost, setProjectPost] = useState([]);
+
+  const [credentials, setCredentials] = useState({
+    username: "",
   });
 
   const navigate = useNavigate();
@@ -26,7 +24,8 @@ function ProjectForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    if (credentials.token) {
+    if (credentials.username) {
+      const { token } = await postData();
       navigate("/project");
     }
   };
@@ -42,10 +41,30 @@ function ProjectForm() {
         <input
           type="text"
           id="description"
-          placeholder="What do you need help with?"
+          placeholder="Let us what you need.."
         />
       </div>
-      <button type="submit">Post</button>
+      <div>
+        <label htmlFor="goal">Goal</label>
+        <input type="number" id="goal" />
+      </div>
+      <div>
+        <label htmlFor="image">Image</label>
+        <input type="url" id="image" />
+      </div>
+      <div>
+        <label htmlFor="is_open">Is Open:</label>
+        <input type="checkbox" id="is_open" />
+      </div>
+      <div>
+        <label htmlFor="date_created">Date Created:</label>
+        <input type="date" id="date_created" />
+      </div>
+      <div>
+        <button className="project-button" type="submit">
+          Post
+        </button>
+      </div>
     </form>
   );
 }

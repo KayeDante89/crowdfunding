@@ -1,14 +1,21 @@
 #project-list {
   display: grid;
-  grid-template-columns: 30% 30% 30%;
-  column-gap: 10px;
+  grid-template-columns: 33% 33% 33%;
+  column-gap: 8px;
   row-gap: 10px;
 }
 
 h1 {
-  color: pink;
+  color: black;
 }
 
-nav {
-  margin-left: 20px;
+@media screen and (max-width: 800px) {
+  #project-list {
+    display: block;
+    margin: 10px;
+  }
+
+  .project-card {
+    margin-bottom: 20px;
+  }
 }

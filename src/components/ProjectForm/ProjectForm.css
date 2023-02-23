@@ -1,0 +1,21 @@
+form {
+  margin-top: 50px;
+}
+
+form div {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+div input {
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.project-button {
+  height: 50px;
+  margin-top: 10px;
+}
