@@ -3,10 +3,61 @@
   grid-template-columns: 33% 33% 33%;
   column-gap: 8px;
   row-gap: 10px;
+  /* width: 70%; */
 }
 
-h1 {
-  color: black;
+.project-container {
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  background-color: #46cece26;
+}
+
+.project-img {
+  /* margin: auto; */
+  width: 50%;
+  padding: 30px;
+}
+
+.outer-box {
+  margin: auto;
+  width: 80%;
+  /* border: 3px solid #c6e2ff; */
+  padding: 50px;
+}
+
+.inner-box {
+  display: flex;
+  justify-content: center;
+}
+
+.project-text {
+  padding: 30px;
+  margin: 30px;
+  background-color: #46cece26;
+  border-radius: 20px;
+}
+
+.inner-box-pledges {
+  display: flex;
+  margin: auto;
+  width: 50%;
+}
+
+.text-section {
+  display: flex;
+  justify-content: center;
+  height: 300px;
+  width: 50%;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 800px) {

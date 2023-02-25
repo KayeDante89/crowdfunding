@@ -1,7 +1,6 @@
 // import { useState, useEffect } from "react";
 
 import { useState, useEffect } from "react";
-import "./Pages.css";
 
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
@@ -36,12 +35,16 @@ function HomePage() {
 
   return (
     <div>
-      <p>Crowdfund your wedding!</p>
-      <h3>Latest Projects</h3>
-      <div id="project-list">
-        {latestProject.map((project, key) => {
-          return <ProjectCard key={key} projectData={project} />;
-        })}
+      <section className="text-section">
+        <h2>Crowdfund your Wedding!</h2>
+      </section>
+      <h2 className="project-container">Latest Projects</h2>
+      <div className="project-container">
+        <div id="project-list">
+          {latestProject.map((project, key) => {
+            return <ProjectCard key={key} projectData={project} />;
+          })}
+        </div>
       </div>
     </div>
   );

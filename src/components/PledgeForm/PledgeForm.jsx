@@ -28,40 +28,6 @@ function PledgeForm(props) {
     }));
   };
 
-  // get auth token from local storage
-
-  // POST the data to your deployed, using fetch.
-  // send the token with it to authorise the ability to post
-  // wait for the response -
-  // if successful, return the JSON payload and display, redirect to / (homepage): I need to change this
-  // if not successful, return the json response display in console
-  // const postData = async () => {
-  //   const response = await fetch(`${import.meta.env.VITE_API_URL}pledges/`, {
-  //     method: "post",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Token ${authToken}`,
-  //     },
-  //     body: JSON.stringify({
-  //       project: project.id,
-  //       ...pledges,
-  //     }),
-  //   });
-  //   return response.json();
-  // };
-
-  // // if authtoken exists, post the data on submit, wait for the response and nav back to home page
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-
-  //   const authToken = window.localStorage.getItem("token");
-
-  //   if (authToken) {
-  //     const postPledge = await postData();
-  //     navigate(`/`);
-  //   }
-  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
     // get auth token from local storage

@@ -19,3 +19,9 @@ div input {
   height: 50px;
   margin-top: 10px;
 }
+
+input {
+  border: none;
+  /* background-color: aquamarine; */
+  border-bottom: solid 1px black;
+}

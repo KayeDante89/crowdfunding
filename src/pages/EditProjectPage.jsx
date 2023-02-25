@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./ProjectForm.css";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+// import ProjectForm from "../components/ProjectForm/ProjectForm";
 
-function ProjectForm() {
+function EditProjectPage() {
   const [project, setProject] = useState({
     title: "",
     description: "",
@@ -12,7 +12,17 @@ function ProjectForm() {
     date_created: null,
   });
 
-  const navigate = useNavigate();
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch(`${import.meta.env.VITE_API_URL}projects/${id}`)
+      .then((results) => {
+        return results.json();
+      })
+      .then((data) => {
+        setProject(data);
+      });
+  }, []);
 
   const handleChange = (event) => {
     const { id, value } = event.target;
@@ -24,21 +34,15 @@ function ProjectForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // get auth token from local storage
+
     const authToken = window.localStorage.getItem("token");
-    // if the auth token exists (if logged in)
-    // TRY to POST the data to your deployed, using fetch.
-    // send the token with it to authorise the ability to post
-    // wait for the response -
-    // if successful, return the JSON payload and reload the page with the data
-    // if not successful, CATCH the error and display as a pop up alert
-    // if not logged in, redirect to login page
+
     if (authToken) {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}projects/`,
+          `${import.meta.env.VITE_API_URL}projects/${id}`,
           {
-            method: "post",
+            method: "put",
             headers: {
               "Content-Type": "application/json",
               Authorization: `Token ${authToken}`,
@@ -67,14 +71,19 @@ function ProjectForm() {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="title">Title</label>
-        <input type="text" id="title" onChange={handleChange} />
+        <input
+          type="text"
+          //   value={data.title}
+          id="title"
+          onChange={handleChange}
+        />
       </div>
       <div>
         <label htmlFor="description">Description</label>
         <input
           type="text"
           id="description"
-          placeholder="Tell us what you need help with."
+          placeholder="Let us what you need.."
           onChange={handleChange}
         />
       </div>
@@ -103,4 +112,4 @@ function ProjectForm() {
   );
 }
 
-export default ProjectForm;
+export default EditProjectPage;

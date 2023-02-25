@@ -1,13 +1,15 @@
 #progress-bar {
-  height: 30px;
+  height: 10px;
   width: 100%;
   border-color: lightslategray;
   border-style: solid;
+  border-radius: 10px 10px 10px 10px;
 }
 
 #progress {
   background-color: lightblue;
   height: inherit;
+  border-radius: inherit;
 }
 
 #progress-container {
@@ -15,6 +17,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 90%;
   margin: auto;
 }

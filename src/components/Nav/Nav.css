@@ -2,45 +2,57 @@
 
 * {
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  /* font-size: 15px; */
 }
 
 nav {
   display: flex;
   justify-content: space-between;
+  border-bottom: solid 1px #46cdce;
   align-items: center;
-  background-color: antiquewhite;
-  width: 100%;
-  height: 180px;
+  /* background-color: antiquewhite; */
+  width: 98%;
+  /* height: 180px; */
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: auto;
 }
 
-h1 {
-  font-size: 46px;
-}
-
-.nav-btn {
+.nav-btn,
+.logout-btn {
   font-size: 18px;
+  justify-content: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  width: 140px;
   text-decoration: none;
   color: black;
 }
 
+.logo-img {
+  height: 200px;
+  width: auto;
+}
+
 .nav-btn:hover {
-  color: blueviolet;
+  color: #46cdce;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-between;
-  width: 380px;
-  margin-right: 20px;
+  align-items: center;
+  width: 100%;
+  /* margin-right: 20px; */
 }
 
 .logout-btn {
   font-size: 18px;
   background: none;
   border: none;
-  margin: 0;
-  padding: 0;
+  /* margin: 0; */
+  /* padding: 0; */
 }
 
 .logout-btn:hover {

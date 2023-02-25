@@ -11,7 +11,6 @@ function Nav(props) {
 
   return (
     <nav>
-      <h1>Love Ledger</h1>
       <div className="nav-links">
         <Link className="nav-btn" to="/">
           Home
@@ -19,14 +18,16 @@ function Nav(props) {
         <Link className="nav-btn" to="/project">
           Projects
         </Link>
+        <img className="logo-img" src="src/images/logo.png" />
         {loggedIn && (
           <Link className="nav-btn" to="/create-project">
             Create Project
           </Link>
         )}
+
         {!loggedIn && (
           <Link className="nav-btn" to="/create-account">
-            Create Account
+            Sign Up
           </Link>
         )}
         {!loggedIn && (
@@ -36,7 +37,7 @@ function Nav(props) {
         )}
         {loggedIn && (
           <button className="logout-btn" onClick={handleClick}>
-            Log Out
+            Logout
           </button>
         )}
       </div>

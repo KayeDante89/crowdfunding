@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import "./Pages.css";
+import { useParams, Link } from "react-router-dom";
 // Dummy data
 import { oneProject } from "../data";
 import PledgeForm from "../components/PledgeForm/PledgeForm";
@@ -25,18 +24,21 @@ function ProjectPage() {
     <div>
       <div className="outer-box">
         <div className="inner-box">
-          <div>
-            <h2>{projectData.title}</h2>
-            <p>Created at: {projectData.date_created}</p>
-            <p>{projectData.description}</p>
-            <h3>{`Status: ${projectData.is_open}`}</h3>
-          </div>
           <div className="project-img">
             <img src={projectData.image} />
           </div>
+          <div className="project-text">
+            <h2>{projectData.title}</h2>
+            <p>{new Date(projectData.date_created).toLocaleDateString()}</p>
+            <p>{projectData.description}</p>
+            <p>{projectData.is_open ? <p>Still open</p> : <p>Closed</p>}</p>
+            <ProgressBar goal={projectData.goal} total={projectData.total} />
+          </div>
         </div>
       </div>
-      <ProgressBar goal={projectData.goal} total={projectData.total} />
+      <Link className="nav-btn" to="/edit-project">
+        Edit
+      </Link>
       <div className="inner-box-pledges">
         <div>
           <PledgeForm project={projectData} />{" "}

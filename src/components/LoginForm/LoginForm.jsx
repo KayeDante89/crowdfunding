@@ -69,7 +69,11 @@ function LoginForm() {
           onChange={handleChange}
         />
       </div>
-      <button type="submit">Login</button>
+      <div>
+        <button className="project-button" type="submit">
+          Login
+        </button>
+      </div>
     </form>
   );
 }

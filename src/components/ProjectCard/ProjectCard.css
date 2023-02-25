@@ -1,11 +1,15 @@
 .project-card {
   /* width: 100%; */
-  border: 1px solid black;
-  box-shadow: 0px 0px 5px gray;
-  padding: 20px;
+  /* border: 1px solid black; */
+  background-color: white;
+  box-shadow: 0px 2px 5px lightslategray;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 15px;
 }
 .project-card img {
   width: 100%;
   height: 300px;
   object-fit: cover;
+  box-shadow: 0px 0px 5px lightslategray;
 }
