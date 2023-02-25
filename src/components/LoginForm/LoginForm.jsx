@@ -24,6 +24,7 @@ function LoginForm() {
   const postData = async () => {
     const response = await fetch(
       `${import.meta.env.VITE_API_URL}api-token-auth/`,
+      // `${import.meta.env.VITE_API_URL}users/<int:pk>/`,
       {
         method: "post",
         headers: {

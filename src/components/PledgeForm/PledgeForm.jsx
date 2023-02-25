@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-function PledgeForm() {
+function PledgeForm(props) {
+  const { project } = props;
+
   const [pledges, setPledges] = useState({
     // from JSON Raw Body in Deployed (default values)
     // this is what you return at the bottom - your list might look different to mine. If so, don't worry!
     amount: null,
     comment: "",
     anonymous: false,
-    project: null,
+    // project: null,
   });
 
   // enables redirect
@@ -27,31 +29,79 @@ function PledgeForm() {
   };
 
   // get auth token from local storage
-  const authToken = window.localStorage.getItem("token");
 
   // POST the data to your deployed, using fetch.
   // send the token with it to authorise the ability to post
   // wait for the response -
   // if successful, return the JSON payload and display, redirect to / (homepage): I need to change this
   // if not successful, return the json response display in console
-  const postData = async () => {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}pledges/`, {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Token ${authToken}`,
-      },
-      body: JSON.stringify(pledges),
-    });
-    return response.json();
-  };
+  // const postData = async () => {
+  //   const response = await fetch(`${import.meta.env.VITE_API_URL}pledges/`, {
+  //     method: "post",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: `Token ${authToken}`,
+  //     },
+  //     body: JSON.stringify({
+  //       project: project.id,
+  //       ...pledges,
+  //     }),
+  //   });
+  //   return response.json();
+  // };
 
-  // if authtoken exists, post the data on submit, wait for the response and nav back to home page
+  // // if authtoken exists, post the data on submit, wait for the response and nav back to home page
+
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+
+  //   const authToken = window.localStorage.getItem("token");
+
+  //   if (authToken) {
+  //     const postPledge = await postData();
+  //     navigate(`/`);
+  //   }
+  // };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    // get auth token from local storage
+    const authToken = window.localStorage.getItem("token");
+    // if the auth token exists (if logged in)
+    // TRY to POST the data to your deployed, using fetch.
+    // send the token with it to authorise the ability to post
+    // wait for the response -
+    // if successful, return the JSON payload and reload the page with the data
+    // if not successful, CATCH the error and display as a pop up alert
+    // if not logged in, redirect to login page
     if (authToken) {
-      const postPledge = await postData();
-      navigate("/");
+      try {
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}pledges/`,
+          {
+            method: "post",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Token ${authToken}`,
+            },
+            body: JSON.stringify(
+              // {project:props.project.id, amount:pledges.amount, comment:pledges.comment, anonymous:pledges.anonymous}
+              // removed props from the above as we amended the line above.
+              // {project:project.id, amount:pledges.amount, comment:pledges.comment, anonymous:pledges.anonymous}
+              { project: project.id, ...pledges }
+            ),
+          }
+        );
+        if (!response.ok) {
+          throw new Error(await response.text());
+        }
+        location.reload();
+      } catch (err) {
+        console.error(err);
+        alert(`Error: ${err.message}`);
+      }
+    } else {
+      //REDIRECT TO LOGIN PAGE
+      navigate(`/login`);
     }
   };
 
@@ -80,7 +130,7 @@ function PledgeForm() {
           <label htmlFor="anonymous">Anonymous:</label>
           <input type="checkbox" id="anonymous" onChange={handleChange} />
         </div>
-        <div>
+        {/* <div>
           <label htmlFor="project">Project:</label>
           <input
             type="text"
@@ -88,7 +138,7 @@ function PledgeForm() {
             placeholder="needs to be auto-filled with current project"
             onChange={handleChange}
           />
-        </div>
+        </div> */}
         <button type="submit">Pledge</button>
       </form>
     </div>

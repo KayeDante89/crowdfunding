@@ -39,7 +39,7 @@ function ProjectPage() {
       <ProgressBar goal={projectData.goal} total={projectData.total} />
       <div className="inner-box-pledges">
         <div>
-          <PledgeForm />{" "}
+          <PledgeForm project={projectData} />{" "}
         </div>
         <div>
           <h3>Pledges:</h3>
@@ -47,7 +47,8 @@ function ProjectPage() {
             {projectData.pledges.map((pledgeData, key) => {
               return (
                 <li key={key}>
-                  {pledgeData.amount} from {pledgeData.supporter}
+                  {pledgeData.amount} : {pledgeData.comment} from{" "}
+                  {pledgeData.supporter}
                 </li>
               );
             })}
