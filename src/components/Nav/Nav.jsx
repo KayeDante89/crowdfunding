@@ -18,7 +18,10 @@ function Nav(props) {
         <Link className="nav-btn" to="/project">
           Projects
         </Link>
-        <img className="logo-img" src="src/images/logo.png" />
+        <img
+          src="https://i.postimg.cc/YCRCxpYR/site-logo.png"
+          className="logo-img"
+        />
         {loggedIn && (
           <Link className="nav-btn" to="/create-project">
             Create Project
