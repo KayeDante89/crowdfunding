@@ -13,9 +13,9 @@ const ProgressBar = ({ goal, total }) => {
       <div id="progress-bar">
         <div style={progressStyle} id="progress"></div>
       </div>
-      <h3 className="sub-text">
+      <p className="sub-text">
         Progress: ${total} of ${goal}.
-      </h3>
+      </p>
     </div>
   );
 };

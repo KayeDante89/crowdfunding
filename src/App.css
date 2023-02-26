@@ -17,7 +17,9 @@
 
 .project-img {
   /* margin: auto; */
-  width: 50%;
+  object-fit: cover;
+  height: 100%;
+  width: 80%;
   padding: 30px;
 }
 
@@ -37,6 +39,7 @@
   padding: 30px;
   margin: 30px;
   background-color: #46cece26;
+  width: 400px;
   border-radius: 20px;
 }
 
@@ -60,8 +63,16 @@ img {
   border-radius: 10px;
 }
 
+@media screen and (max-width: 1260px) {
+  .inner-box {
+    display: block;
+    margin: 10px;
+  }
+}
+
 @media screen and (max-width: 800px) {
-  #project-list {
+  #project-list,
+  .inner-box {
     display: block;
     margin: 10px;
   }
