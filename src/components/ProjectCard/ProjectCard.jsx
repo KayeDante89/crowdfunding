@@ -7,9 +7,13 @@ function ProjectCard(props) {
 
   return (
     <div className="project-card">
-      <Link to={`/project/${projectData.id}`}>
+      <Link className="proj-name-link" to={`/project/${projectData.id}`}>
         <img src={projectData.image} />
         <h2>{projectData.title}</h2>
+        <p>{projectData.description}</p>
+        <p>
+          created: {new Date(projectData.date_created).toLocaleDateString()}
+        </p>
       </Link>
     </div>
   );

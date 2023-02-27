@@ -20,7 +20,7 @@ nav {
 
 .nav-btn,
 .logout-btn {
-  font-size: 18px;
+  font-size: 15px;
   justify-content: center;
   margin: auto;
   display: flex;
@@ -48,7 +48,7 @@ nav {
 }
 
 .logout-btn {
-  font-size: 18px;
+  /* font-size: 18px; */
   background: none;
   border: none;
   /* margin: 0; */
@@ -56,5 +56,5 @@ nav {
 }
 
 .logout-btn:hover {
-  color: red;
+  color: #46cdce;
 }

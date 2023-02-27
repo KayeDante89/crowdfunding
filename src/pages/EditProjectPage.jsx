@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 // import ProjectForm from "../components/ProjectForm/ProjectForm";
 
 function EditProjectPage() {
@@ -13,6 +13,7 @@ function EditProjectPage() {
   });
 
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}projects/${id}`)
@@ -73,7 +74,7 @@ function EditProjectPage() {
         <label htmlFor="title">Title</label>
         <input
           type="text"
-          //   value={data.title}
+          value={project.title}
           id="title"
           onChange={handleChange}
         />

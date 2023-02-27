@@ -39,22 +39,23 @@ function ProjectPage() {
       <Link className="nav-btn" to="/edit-project">
         Edit
       </Link>
-      <div className="inner-box-pledges">
-        <div>
-          <PledgeForm project={projectData} />{" "}
-        </div>
-        <div>
+      <div className="inner-box">
+        <div className="inner-box-pledges">
           <h3>Pledges:</h3>
-          <ul>
+          <ul className="pledge-list">
             {projectData.pledges.map((pledgeData, key) => {
               return (
-                <li key={key}>
-                  {pledgeData.amount} : {pledgeData.comment} from{" "}
-                  {pledgeData.supporter}
+                <li className="pledge-blocks" key={key}>
+                  ${pledgeData.amount} donated by{" "}
+                  {pledgeData.supporter ? pledgeData.supporter : "anonymous"}
+                  <br />- {pledgeData.comment}
                 </li>
               );
             })}
           </ul>
+        </div>
+        <div className="inner-box-pledges">
+          <PledgeForm project={projectData} />{" "}
         </div>
       </div>
     </div>
