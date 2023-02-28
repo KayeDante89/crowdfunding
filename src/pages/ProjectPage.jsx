@@ -36,25 +36,22 @@ function ProjectPage() {
           </div>
         </div>
       </div>
-      <Link className="nav-btn" to="/edit-project">
-        Edit
-      </Link>
-      <div className="inner-box">
-        <div className="inner-box-pledges">
-          <ul className="pledge-list">
-            <h3>Pledges:</h3>
-            {projectData.pledges.map((pledgeData, key) => {
-              return (
-                <li className="pledge-blocks" key={key}>
-                  ${pledgeData.amount} donated by{" "}
-                  {pledgeData.supporter ? pledgeData.supporter : "anonymous"}
-                  <br />- {pledgeData.comment}
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-        <div className="inner-box-pledges">
+      <div className="outer-box">
+        <div className="inner-box">
+          <div>
+            <ul className="pledge-list">
+              <h3>Pledges:</h3>
+              {projectData.pledges.map((pledgeData, key) => {
+                return (
+                  <li className="pledge-blocks" key={key}>
+                    ${pledgeData.amount} donated by{" "}
+                    {pledgeData.supporter ? pledgeData.supporter : "anonymous"}
+                    <br />- {pledgeData.comment}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
           <PledgeForm project={projectData} />{" "}
         </div>
       </div>

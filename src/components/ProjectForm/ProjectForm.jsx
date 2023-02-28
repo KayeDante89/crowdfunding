@@ -64,7 +64,7 @@ function ProjectForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="project-form" onSubmit={handleSubmit}>
       <div>
         <h1>Start a project!</h1>
         {/* <label htmlFor="title">Title</label> */}

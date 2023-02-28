@@ -2,32 +2,9 @@ p {
   font-size: 13px;
 }
 
-.pledge-list {
-  margin: auto;
-  height: 250px;
-  list-style-type: none;
-  overflow: scroll;
-}
+/* ------------ HOME PAGE */
 
-.pledge-blocks {
-  background-color: #46cece26;
-  font-size: 13px;
-  /* margin: auto; */
-  width: 400px;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px 10px 10px 20px;
-  border-bottom: solid 1px black;
-}
-
-#project-list {
-  display: grid;
-  grid-template-columns: 33% 33% 33%;
-  column-gap: 8px;
-  row-gap: 10px;
-  /* width: 70%; */
-}
-
+/* container containing Project list */
 .project-container {
   width: 80%;
   padding: 20px;
@@ -37,26 +14,41 @@ p {
   background-color: #46cece26;
 }
 
-.project-img {
-  /* margin: auto; */
-  object-fit: cover;
-  height: 100%;
-  width: 80%;
-  padding: 30px;
+/* the list of Projects displayed */
+#project-list {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  column-gap: 8px;
+  row-gap: 10px;
+  /* width: 70%; */
 }
 
+/* ---------- PROJECT PAGE */
+
+/* Containing inner box */
 .outer-box {
   margin: auto;
-  width: 80%;
+  width: 70%;
   /* border: 3px solid #c6e2ff; */
   /* padding: 50px; */
 }
-
+/* Containing Img/Text & Pledges/Pledge Form */
 .inner-box {
   display: flex;
   justify-content: center;
 }
 
+/* Image in Project Page  */
+.project-img {
+  /* margin: auto; */
+  object-fit: cover;
+  height: 100%;
+  width: 80%;
+  /* margin: auto; */
+  padding: 30px;
+}
+
+/* Project description */
 .project-text {
   padding: 30px;
   margin: 30px;
@@ -65,11 +57,26 @@ p {
   border-radius: 20px;
 }
 
-.inner-box-pledges {
+/* div for the List of Pledges */
+.pledge-list {
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  /* width: 100%; */
+  height: 300px;
+  list-style-type: none;
+  overflow: scroll;
+  margin-right: 100px;
+}
+
+/* The individual Pledge comments */
+.pledge-blocks {
+  background-color: #46cece26;
+  font-size: 13px;
+  /* margin: auto; */
+  width: 400px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px 10px 10px 20px;
+  border-bottom: solid 1px black;
 }
 
 .text-section {
@@ -89,30 +96,33 @@ img {
 /* ------------------ MEDIA QUERIES */
 
 @media screen and (max-width: 1260px) {
+  /* ----- the containers to separate project & pledges sections */
   .inner-box {
     display: block;
     margin: 10px;
   }
 
+  /* ----- Image in Project Page  */
+  .project-img {
+    margin: auto;
+  }
+
+  /* ----- Project description */
   .project-text {
-    width: 59vw;
+    width: 56vw;
+    margin: auto;
+  }
+
+  /* ----- div for the List of Pledges */
+  .pledge-list {
+    width: 70%;
+    margin: auto;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .project-img {
-    width: 100%;
-  }
-
   .project-container {
     width: 90%;
-  }
-
-  #project-list,
-  .inner-box {
-    display: inline-block;
-    align-items: center;
-    margin: auto;
   }
 
   .project-card {
