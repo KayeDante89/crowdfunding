@@ -66,32 +66,48 @@ function ProjectForm() {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="title">Title</label>
-        <input type="text" id="title" onChange={handleChange} />
-      </div>
-      <div>
-        <label htmlFor="description">Description</label>
+        <h1>Start a project!</h1>
+        {/* <label htmlFor="title">Title</label> */}
         <input
+          placeholder="Title"
           type="text"
-          id="description"
-          placeholder="Tell us what you need help with."
+          id="title"
           onChange={handleChange}
         />
       </div>
       <div>
-        <label htmlFor="goal">Goal</label>
-        <input type="number" id="goal" onChange={handleChange} />
+        {/* <label htmlFor="description">Description</label> */}
+        <input
+          type="text"
+          id="description"
+          placeholder="Tell us about what you need help with."
+          onChange={handleChange}
+        />
       </div>
       <div>
-        <label htmlFor="image">Image</label>
-        <input type="url" id="image" onChange={handleChange} />
+        {/* <label htmlFor="goal">Goal</label> */}
+        <input
+          placeholder="Enter your targeted amount here"
+          type="number"
+          id="goal"
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        {/* <label htmlFor="image">Image</label> */}
+        <input
+          placeholder="image url"
+          type="url"
+          id="image"
+          onChange={handleChange}
+        />
       </div>
       <div>
         <label htmlFor="is_open">Is Open:</label>
         <input type="checkbox" id="is_open" onChange={handleChange} />
       </div>
       <div>
-        <label htmlFor="date_created">Date Created:</label>
+        {/* <label htmlFor="date_created">Date Created:</label> */}
         <input type="date" id="date_created" onChange={handleChange} />
       </div>
       <div>

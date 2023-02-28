@@ -16,12 +16,23 @@ div input {
 }
 
 .project-button {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  border: solid 1px grey;
   height: 50px;
+  width: 50%;
   margin-top: 10px;
+}
+
+.project-button:hover {
+  background-color: #46cdce;
+  color: white;
+  border: none;
 }
 
 input {
   border: none;
-  /* background-color: aquamarine; */
-  border-bottom: solid 1px black;
+  background-color: rgba(211, 211, 211, 0.432);
+  border-radius: 10px;
 }

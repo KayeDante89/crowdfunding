@@ -74,21 +74,22 @@ function PledgeForm(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
+        <h3>Make a Donation:</h3>
         <div>
-          <label htmlFor="amount">Amount:</label>
+          {/* <label htmlFor="amount">Amount:</label> */}
           <input
             type="number"
             id="amount"
-            placeholder="Enter amount"
+            placeholder="How much are you donating?"
             onChange={handleChange}
           />
         </div>
         <div>
-          <label htmlFor="comment">Comment:</label>
+          {/* <label htmlFor="comment">Comment:</label> */}
           <input
             type="text"
             id="comment"
-            placeholder="Enter Comment"
+            placeholder="Leave a message!"
             onChange={handleChange}
           />
         </div>
@@ -105,7 +106,11 @@ function PledgeForm(props) {
             onChange={handleChange}
           />
         </div> */}
-        <button type="submit">Pledge</button>
+        <div>
+          <button className="project-button" type="submit">
+            Pledge
+          </button>
+        </div>
       </form>
     </div>
   );

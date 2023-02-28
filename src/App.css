@@ -67,6 +67,9 @@ p {
 
 .inner-box-pledges {
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 .text-section {
@@ -82,6 +85,8 @@ img {
   height: 100%;
   border-radius: 10px;
 }
+
+/* ------------------ MEDIA QUERIES */
 
 @media screen and (max-width: 1260px) {
   .inner-box {

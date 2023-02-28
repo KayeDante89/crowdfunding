@@ -11,6 +11,7 @@ import EditProjectPage from "./pages/EditProjectPage";
 
 // Components
 import Nav from "./components/Nav/Nav";
+import Footer from "./components/Footer/Footer";
 
 import "./App.css";
 
@@ -23,6 +24,7 @@ const Layout = () => {
     <div>
       <Nav loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Outlet context={[loggedIn, setLoggedIn]} />
+      <Footer />
     </div>
   );
 };
