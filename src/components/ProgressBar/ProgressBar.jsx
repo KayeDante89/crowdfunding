@@ -7,15 +7,20 @@ const ProgressBar = ({ goal, total }) => {
   console.log(progressPercentage);
   const progressStyle = {
     width: progressPercentage,
+    // maxWidth: goal,
   };
   return (
     <div id="progress-container">
       <div id="progress-bar">
         <div style={progressStyle} id="progress"></div>
       </div>
-      <p className="sub-text">
-        ${total} of ${goal} donated
-      </p>
+      {total !== goal ? (
+        <p className="sub-text">
+          ${total} of ${goal} donated
+        </p>
+      ) : (
+        <p>Goal reached!</p>
+      )}
     </div>
   );
 };

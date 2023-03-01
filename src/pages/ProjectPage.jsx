@@ -49,7 +49,7 @@ function ProjectPage() {
                     <br />- {pledgeData.comment}
                   </li>
                 );
-              })}
+              })}{" "}
             </ul>
           </div>
           <PledgeForm project={projectData} />{" "}

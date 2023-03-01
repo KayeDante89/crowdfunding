@@ -90,12 +90,20 @@ function PledgeForm(props) {
             type="text"
             id="comment"
             placeholder="Leave a message!"
+            maxlength="120"
             onChange={handleChange}
           />
         </div>
         <div>
-          <label htmlFor="anonymous">Anonymous:</label>
-          <input type="checkbox" id="anonymous" onChange={handleChange} />
+          <label htmlFor="anonymous">
+            Anonymous:
+            <input
+              className="checkbox"
+              type="checkbox"
+              id="anonymous"
+              onChange={handleChange}
+            />
+          </label>
         </div>
         {/* <div>
           <label htmlFor="project">Project:</label>

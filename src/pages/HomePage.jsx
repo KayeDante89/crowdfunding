@@ -1,14 +1,16 @@
 // import { useState, useEffect } from "react";
 
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 // import { allProjects } from "../data";
 
 function HomePage() {
+  const authToken = window.localStorage.getItem("token");
   // State
-  const [projectList, setProjectList] = useState([]); // first variable is the object itself. second is the state to edit the object
+  const [projectList, setProjectList] = useState([]);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}projects`) // making network request to url
@@ -19,6 +21,16 @@ function HomePage() {
         setProjectList(data);
       });
   }, []);
+
+  // useEffect(() => {
+  //   fetch(`${import.meta.env.VITE_API_URL}users/${id}`)
+  //     .then((results) => {
+  //       return results.json();
+  //     })
+  //     .then((data) => {
+  //       setUserData(data);
+  //     });
+  // }, []);
 
   function compare(a, b) {
     if (a.date_created < b.date_created) {
@@ -34,8 +46,9 @@ function HomePage() {
   // console.log(latestProject);
 
   return (
-    <div>
+    <div className="inner-box">
       <section className="text-section">
+        {/* <h2>Welcome {user.username}</h2> */}
         <h2>Crowdfund your Wedding!</h2>
       </section>
       <h2 className="project-container">Latest Projects</h2>

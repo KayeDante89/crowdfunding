@@ -1,6 +1,7 @@
 #progress-bar {
   height: 10px;
   width: 100%;
+  /* max-width: 100%; */
   border-color: lightslategray;
   border-style: solid;
   border-radius: 10px 10px 10px 10px;

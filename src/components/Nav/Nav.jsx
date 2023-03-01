@@ -29,7 +29,7 @@ function Nav(props) {
         )}
 
         {!loggedIn && (
-          <Link className="nav-btn" to="/create-account">
+          <Link className="nav-btn" to="/sign-up">
             Sign Up
           </Link>
         )}

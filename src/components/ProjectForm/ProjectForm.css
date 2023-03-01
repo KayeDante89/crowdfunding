@@ -3,21 +3,37 @@
 }
 
 form div {
-  width: 500px;
+  width: 80vw;
+  max-width: 540px;
   display: flex;
   flex-direction: column;
   margin: auto;
 }
-
-div input {
+/* FORM Input fields */
+input {
+  border: none;
   height: 40px;
   margin-bottom: 15px;
   padding: 13px;
+  background-color: rgba(211, 211, 211, 0.432);
+  border-radius: 10px;
 }
 
+.checkbox-field {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.checkbox {
+  height: 13px;
+  margin-left: 20px;
+}
+
+/* SUBMIT BUTTON */
 .project-button {
-  margin-left: auto;
-  margin-right: auto;
+  text-decoration: none;
+  margin: auto;
   border-radius: 20px;
   border: solid 1px grey;
   height: 50px;
@@ -31,8 +47,22 @@ div input {
   border: none;
 }
 
-input {
-  border: none;
-  background-color: rgba(211, 211, 211, 0.432);
-  border-radius: 10px;
+/*------ MEDIA QUERIES ------*/
+
+@media screen and (max-width: 600px) {
+  .project-form {
+    width: 100%;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .project-button {
+    width: 80%;
+  }
+
+  form div {
+    display: flex;
+    width: 70%;
+    margin: auto;
+  }
 }

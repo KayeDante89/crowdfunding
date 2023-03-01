@@ -81,6 +81,7 @@ function ProjectForm() {
           type="text"
           id="description"
           placeholder="Tell us about what you need help with."
+          maxlength="200"
           onChange={handleChange}
         />
       </div>
@@ -102,9 +103,16 @@ function ProjectForm() {
           onChange={handleChange}
         />
       </div>
-      <div>
-        <label htmlFor="is_open">Is Open:</label>
-        <input type="checkbox" id="is_open" onChange={handleChange} />
+      <div className="checkbox-field">
+        <label htmlFor="is_open">
+          Is Open:
+          <input
+            className="checkbox"
+            type="checkbox"
+            id="is_open"
+            onChange={handleChange}
+          />
+        </label>
       </div>
       <div>
         {/* <label htmlFor="date_created">Date Created:</label> */}
