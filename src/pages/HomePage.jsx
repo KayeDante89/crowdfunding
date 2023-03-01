@@ -46,7 +46,7 @@ function HomePage() {
   // console.log(latestProject);
 
   return (
-    <div className="inner-box">
+    <div>
       <section className="text-section">
         {/* <h2>Welcome {user.username}</h2> */}
         <h2>Crowdfund your Wedding!</h2>

@@ -32,11 +32,11 @@ p {
   /* border: 3px solid #c6e2ff; */
   /* padding: 50px; */
 }
-/* Containing Img/Text & Pledges/Pledge Form
+/* Containing Img/Text & Pledges/Pledge Form */
 .inner-box {
   display: flex;
   justify-content: center;
-} */
+}
 
 /* Image in Project Page  */
 .project-img {
