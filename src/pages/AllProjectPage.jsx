@@ -9,7 +9,7 @@ import ProjectCard from "../components/ProjectCard/ProjectCard";
 
 function AllProjectsPage() {
   // State
-  const [projectList, setProjectList] = useState([]); // first variable is the object itself. second is the state to edit the object
+  const [projectList, setProjectList] = useState([]);
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}projects`) // making network request to url
@@ -38,10 +38,6 @@ function AllProjectsPage() {
     <div>
       <section className="text-section">
         <h2>Need help getting funding? Start a new fund now!</h2>
-
-        <Link to="/create-project">
-          <button className="project-button">CREATE A PROJECT</button>
-        </Link>
       </section>
       <h2 className="project-container">Discover Current Projects</h2>
       <div className="project-container">

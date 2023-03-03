@@ -11,6 +11,9 @@ function HomePage() {
   const authToken = window.localStorage.getItem("token");
   // State
   const [projectList, setProjectList] = useState([]);
+  // const [user, setUser] = useState([]);
+
+  // const { id } = useParams();
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}projects`) // making network request to url
@@ -21,16 +24,6 @@ function HomePage() {
         setProjectList(data);
       });
   }, []);
-
-  // useEffect(() => {
-  //   fetch(`${import.meta.env.VITE_API_URL}users/${id}`)
-  //     .then((results) => {
-  //       return results.json();
-  //     })
-  //     .then((data) => {
-  //       setUserData(data);
-  //     });
-  // }, []);
 
   function compare(a, b) {
     if (a.date_created < b.date_created) {

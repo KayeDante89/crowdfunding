@@ -32,13 +32,7 @@ function PledgeForm(props) {
     event.preventDefault();
     // get auth token from local storage
     const authToken = window.localStorage.getItem("token");
-    // if the auth token exists (if logged in)
-    // TRY to POST the data to your deployed, using fetch.
-    // send the token with it to authorise the ability to post
-    // wait for the response -
-    // if successful, return the JSON payload and reload the page with the data
-    // if not successful, CATCH the error and display as a pop up alert
-    // if not logged in, redirect to login page
+
     if (authToken) {
       try {
         const response = await fetch(
@@ -49,12 +43,7 @@ function PledgeForm(props) {
               "Content-Type": "application/json",
               Authorization: `Token ${authToken}`,
             },
-            body: JSON.stringify(
-              // {project:props.project.id, amount:pledges.amount, comment:pledges.comment, anonymous:pledges.anonymous}
-              // removed props from the above as we amended the line above.
-              // {project:project.id, amount:pledges.amount, comment:pledges.comment, anonymous:pledges.anonymous}
-              { project: project.id, ...pledges }
-            ),
+            body: JSON.stringify({ project: project.id, ...pledges }),
           }
         );
         if (!response.ok) {
@@ -74,9 +63,10 @@ function PledgeForm(props) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h3>Make a Donation:</h3>
+        {/* <h3>Make a Donation:</h3> */}
         <div>
           {/* <label htmlFor="amount">Amount:</label> */}
+          <h3>Donate Now:</h3>
           <input
             type="number"
             id="amount"

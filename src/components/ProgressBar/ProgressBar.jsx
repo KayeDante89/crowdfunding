@@ -4,22 +4,31 @@ import "./ProgressBar.css";
 const ProgressBar = ({ goal, total }) => {
   const progressPercentage = Math.round((total / goal) * 100) + "%";
   const remainder = Math.round(goal - total, 2);
+  const goalPercent = goal + "%";
   console.log(progressPercentage);
   const progressStyle = {
     width: progressPercentage,
-    // maxWidth: goal,
+  };
+  const completeGoalStyle = {
+    width: goalPercent,
   };
   return (
     <div id="progress-container">
       <div id="progress-bar">
-        <div style={progressStyle} id="progress"></div>
+        {total < goal ? (
+          <div style={progressStyle} id="progress"></div>
+        ) : (
+          <div style={completeGoalStyle} id="progress"></div>
+        )}
       </div>
-      {total !== goal ? (
+      {total < goal ? (
         <p className="sub-text">
-          ${total} of ${goal} donated
+          <b>${total} raised</b> of ${goal} goal
         </p>
       ) : (
-        <p>Goal reached!</p>
+        <p>
+          Goal reached! <b>${total} raised</b> of ${goal} goal
+        </p>
       )}
     </div>
   );

@@ -35,7 +35,7 @@ input {
   text-decoration: none;
   margin: auto;
   border-radius: 20px;
-  border: solid 1px grey;
+  border: solid 0.2px grey;
   height: 50px;
   width: 50%;
   margin-top: 10px;
@@ -45,24 +45,4 @@ input {
   background-color: #46cdce;
   color: white;
   border: none;
-}
-
-/*------ MEDIA QUERIES ------*/
-
-@media screen and (max-width: 600px) {
-  .project-form {
-    width: 100%;
-    margin: auto;
-    margin-top: 20px;
-  }
-
-  .project-button {
-    width: 80%;
-  }
-
-  form div {
-    display: flex;
-    width: 70%;
-    margin: auto;
-  }
 }

@@ -24,9 +24,7 @@ function ProjectPage() {
     <div>
       <div className="outer-box">
         <div className="inner-box">
-          <div className="project-img">
-            <img src={projectData.image} />
-          </div>
+          <img className="project-img" src={projectData.image} />
           <div className="project-text">
             <h2>{projectData.title}</h2>
             <p>{new Date(projectData.date_created).toLocaleDateString()}</p>
@@ -37,22 +35,28 @@ function ProjectPage() {
         </div>
       </div>
       <div className="outer-box">
-        <div className="inner-box">
+        <div className="pledge-box">
           <div>
             <ul className="pledge-list">
               <h3>Pledges:</h3>
               {projectData.pledges.map((pledgeData, key) => {
                 return (
                   <li className="pledge-blocks" key={key}>
-                    ${pledgeData.amount} donated by{" "}
-                    {pledgeData.supporter ? pledgeData.supporter : "anonymous"}
-                    <br />- {pledgeData.comment}
+                    <b>
+                      {pledgeData.supporter
+                        ? pledgeData.supporter
+                        : "anonymous"}
+                    </b>{" "}
+                    | ${pledgeData.amount}
+                    <br />"{pledgeData.comment}"
                   </li>
                 );
               })}{" "}
             </ul>
           </div>
-          <PledgeForm project={projectData} />{" "}
+          <div class="pledge-form">
+            <PledgeForm project={projectData} />{" "}
+          </div>
         </div>
       </div>
     </div>

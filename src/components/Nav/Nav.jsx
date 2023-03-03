@@ -1,16 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Nav.css";
 
 function Nav(props) {
   const { loggedIn, setLoggedIn } = props;
 
+  const navigate = useNavigate();
+
   const handleClick = () => {
     window.localStorage.removeItem("token");
     setLoggedIn(false);
+    navigate(`/`);
   };
 
   return (
     <nav>
+      <div className="nav-logo">
+        {" "}
+        <img
+          src="https://i.postimg.cc/YCRCxpYR/site-logo.png"
+          className="logo-img"
+        />
+      </div>
       <div className="nav-links">
         <Link className="nav-btn" to="/">
           Home
@@ -18,10 +28,6 @@ function Nav(props) {
         <Link className="nav-btn" to="/project">
           Projects
         </Link>
-        <img
-          src="https://i.postimg.cc/YCRCxpYR/site-logo.png"
-          className="logo-img"
-        />
         {loggedIn && (
           <Link className="nav-btn" to="/create-project">
             Create Project
