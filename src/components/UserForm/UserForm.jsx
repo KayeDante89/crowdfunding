@@ -46,7 +46,7 @@ function RegistrationForm() {
       <form className="project-form" onSubmit={handleSubmit}>
         <div>
           <h2>Sign Up</h2>
-          <label htmlFor="username">Username:</label>
+          {/* <label htmlFor="username">Username:</label> */}
           <input
             type="text"
             id="username"
@@ -55,7 +55,7 @@ function RegistrationForm() {
           />
         </div>
         <div>
-          <label htmlFor="email">Email:</label>
+          {/* <label htmlFor="email">Email:</label> */}
           <input
             type="email"
             id="email"
@@ -64,7 +64,7 @@ function RegistrationForm() {
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          {/* <label htmlFor="password">Password:</label> */}
           <input
             type="password"
             id="password"

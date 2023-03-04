@@ -144,7 +144,9 @@ img {
 
 @media screen and (max-width: 1180px) {
   .project-img {
-    margin: 0;
+    display: flex;
+    margin: auto;
+    padding: 0;
   }
 
   .pledge-box {
