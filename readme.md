@@ -2,8 +2,9 @@
 
 This is part 2 of my Crowdfund App project using React JS as my frontend dev tool.
 
-deployed website: [loveledger.netlify.app](https://loveledger.netlify.app/)
-deployed api site: [kayemdante89.fly.dev](https://kayemdante89.fly.dev/projects/)
+deployed website: [loveledger.netlify.app](https://loveledger.netlify.app/).
+
+deployed api site: [kayemdante89.fly.dev](https://kayemdante89.fly.dev/projects/).
 
 ### About Love Ledger
 
