@@ -178,14 +178,14 @@ img {
     width: 100%;
   }
 
-  /* .outer-box {
-    margin: auto;
-    margin-top: 40px;
-    width: 90%;
-  } */
-
   #project-list {
     display: block;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  p {
+    font-size: 10px;
   }
 }
 
