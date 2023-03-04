@@ -75,6 +75,7 @@ img {
   padding: 30px;
   margin: 30px;
   margin-left: 0;
+  /* background-color: white; */
   /* border-top: solid 1px rgba(0, 0, 0, 0.097); */
   border-bottom: solid 1px rgba(0, 0, 0, 0.097);
   /* background-color: #46cece26; */
@@ -154,9 +155,9 @@ img {
   }
 
   .project-text {
-    width: 90%;
+    width: 80%;
     margin: auto;
-    padding: 0;
+    padding: 30px;
   }
   /* ----- the containers to separate project & pledges sections */
   .inner-box {
