@@ -17,7 +17,7 @@ function Nav(props) {
       <div className="nav-logo">
         {" "}
         <img
-          src="https://i.postimg.cc/YCRCxpYR/site-logo.png"
+          src="https://i.postimg.cc/mkrcqMz9/Black-White-Minimal-Design-Studio-Logo-500-200px-1.png"
           className="logo-img"
         />
       </div>

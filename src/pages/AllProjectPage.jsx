@@ -37,7 +37,14 @@ function AllProjectsPage() {
   return (
     <div>
       <section className="text-section">
-        <h2>Need help getting funding? Start a new fund now!</h2>
+        <h2>It's okay to ask for help..</h2>
+        <p>
+          Love Ledger is more than just a crowdfunding app - it's a community of
+          people who believe in love and want to help couples celebrate their
+          special day. With Love Ledger, couples can focus on planning their
+          wedding without the stress of financial worries.
+        </p>
+        <p>Start a crowdfund now!</p>
       </section>
       <h2 className="project-container">Discover Current Projects</h2>
       <div className="project-container">
