@@ -26,13 +26,7 @@ function ProjectForm() {
     event.preventDefault();
     // get auth token from local storage
     const authToken = window.localStorage.getItem("token");
-    // if the auth token exists (if logged in)
-    // TRY to POST the data to your deployed, using fetch.
-    // send the token with it to authorise the ability to post
-    // wait for the response -
-    // if successful, return the JSON payload and reload the page with the data
-    // if not successful, CATCH the error and display as a pop up alert
-    // if not logged in, redirect to login page
+
     if (authToken) {
       try {
         const response = await fetch(

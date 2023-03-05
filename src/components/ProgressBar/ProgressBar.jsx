@@ -28,7 +28,7 @@ const ProgressBar = ({ goal, total }) => {
         </p>
       ) : (
         <p>
-          Goal reached! | ${total} raised of {goal} goal
+          Goal reached! | ${total} raised of ${goal} goal
         </p>
       )}
     </div>

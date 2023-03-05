@@ -112,7 +112,8 @@ img {
   /* margin: auto; */
   width: 400px;
   /* height: 40px; */
-  margin: 20px;
+  margin: auto;
+  margin-bottom: 20px;
   padding: 15px;
   padding-left: 40px;
   border-radius: 10px;
@@ -133,9 +134,13 @@ img {
 
 @media screen and (max-width: 1260px) {
   /* ----- div for the List of Pledges */
-  .pledge-list {
-    width: 90%;
-    margin: auto;
+  .pledge-blocks {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .pledge-form {
+    margin-left: 30px;
   }
 }
 
@@ -152,6 +157,12 @@ img {
 
   .pledge-box {
     display: block;
+  }
+
+  .pledge-blocks {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 60%;
   }
 
   .project-text {
@@ -177,6 +188,13 @@ img {
 
   .pledge-form {
     width: 100%;
+    margin: 0;
+  }
+
+  .pledge-blocks {
+    margin: auto;
+    margin-bottom: 20px;
+    width: 70%;
   }
 
   #project-list {
