@@ -83,6 +83,7 @@ function ProjectForm() {
         <input
           placeholder="Enter your targeted amount here"
           type="number"
+          min="1"
           id="goal"
           onChange={handleChange}
         />
