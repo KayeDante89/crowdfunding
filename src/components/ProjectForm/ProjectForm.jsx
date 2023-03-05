@@ -21,7 +21,6 @@ function ProjectForm() {
       [id]: value,
     }));
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     // get auth token from local storage
