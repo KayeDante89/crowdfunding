@@ -69,6 +69,7 @@ function PledgeForm(props) {
           <h3>Donate Now:</h3>
           <input
             type="number"
+            min="0"
             id="amount"
             placeholder="How much are you donating?"
             onChange={handleChange}
