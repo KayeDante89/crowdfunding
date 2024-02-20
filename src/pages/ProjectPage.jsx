@@ -39,7 +39,7 @@ function ProjectPage() {
           <div>
             <ul className="pledge-list">
               <h3>Pledges:</h3>
-              {projectData.pledges.map((pledgeData, key) => {
+              {projectData.pledges.slice().reverse().map((pledgeData, key) => {
                 return (
                   <li className="pledge-blocks" key={key}>
                     <b>
